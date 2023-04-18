@@ -1,0 +1,21 @@
+package com.jslhrd.exam01;
+
+import java.io.File;
+import java.util.Scanner;
+
+//파일로부터 읽기
+public class Exam_08 {
+	public static void main(String[] args) throws Exception {
+
+//		Scanner scn = new Scanner(new File("C:\\Users\\admin\\data\\data.txt"));// window
+//		Scanner scn = new Scanner(new File("C:/Users/admin/data/data.txt"));// Linux
+		Scanner scn = new Scanner(new File("C:/Users/admin/data/data.csv"));// 쉽표분리 확장자 csv
+		while (scn.hasNextLine()) {
+			String[] str = scn.nextLine().split(",");
+			Student stu = new Student(Integer.parseInt(str[0]), str[1], Integer.parseInt(str[2]),
+					Integer.parseInt(str[3]), Integer.parseInt(str[4]));
+			System.out.println(stu);
+		}
+	}
+
+}
